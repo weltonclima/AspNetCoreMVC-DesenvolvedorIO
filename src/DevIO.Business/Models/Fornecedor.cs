@@ -2,7 +2,7 @@
 
 namespace DevIO.Business.Models
 {
-    public class Fornecedor : Entity
+    public class Fornecedor : Entidade
     {
         public string Nome { get; set; }
 

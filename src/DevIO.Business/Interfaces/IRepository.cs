@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace DevIO.Business.Interfaces
 {
-    public interface IRepository<TEntity> : IDisposable where TEntity : Entity
+    public interface IRepository<TEntidade> : IDisposable where TEntidade : Entidade
     {
-        Task Adicionar(TEntity entity);
-        Task<TEntity> ObterPorId(Guid id);
-        Task<List<TEntity>> ObterTodos();
-        Task Atualizar(TEntity entity);
+        Task Adicionar(TEntidade entidade);
+        Task<TEntidade> ObterPorId(Guid id);    
+        Task<List<TEntidade>> ObterTodos();
+        Task Atualizar(TEntidade entity);
         Task Remover(Guid id);
-        Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntidade>> Buscar(Expression<Func<TEntidade, bool>> predicate);
         Task<int> SaveChanges();
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevIO.Business.Models
 {
-    public class Produto : Entity
+    public class Produto : Entidade
     {
         public Guid FornecedorId { get; set; }
 

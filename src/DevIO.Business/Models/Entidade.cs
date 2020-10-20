@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace DevIO.Business.Models
 {
-    public abstract class Entity
+    public abstract class Entidade
     {
-        protected Entity()
+        protected Entidade()
         {
             Id = Guid.NewGuid();
         }

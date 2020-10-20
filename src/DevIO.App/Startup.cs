@@ -15,6 +15,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Design;
 using DevIO.Data.Context;
 using Microsoft.Extensions.Options;
+using DevIO.Business.Interfaces;
+using DevIO.Data.Repository;
+using AutoMapper;
 
 namespace DevIO.App
 {
@@ -39,6 +42,12 @@ namespace DevIO.App
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddScoped<MeuDbContext>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
